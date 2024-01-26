@@ -1,5 +1,3 @@
-# Python-Colour-Info-Extractor
-
 # Color Extractor and Analysis Tool
 
 ## Description
