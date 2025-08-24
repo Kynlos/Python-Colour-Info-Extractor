@@ -161,28 +161,34 @@ cython_debug/
 # VSCode
 .vscode/
 
-# Analysis outputs
+# Analysis outputs (not source code)
 *_analysis/
-*.txt
-*.png
-*.svg
-*.pdf
-*.css
-*.scss
-*.json
-*.html
-*.xml
-*.yaml
-*.yml
-*.ase
-*.aco
-*.gpl
-*.js
-*.py
-*.swift
-*.kt
-*.java
+*_output/
+output_*.txt
+output_*.png
+output_*.svg
+output_*.pdf
+output_*.css
+output_*.scss
+output_*.json
+output_*.html
+output_*.xml
+output_*.yaml
+output_*.yml
+output_*.ase
+output_*.aco
+output_*.gpl
+output_*.js
+output_*.swift
+output_*.kt
+output_*.java
 error.log
+
+# Keep demo files but exclude other temporary files
+!*demo*.py
+!simple_demo.py
+!comprehensive_demo.py
+!demo_functionality.py
 
 # Test images (keep some for testing)
 test_images/
