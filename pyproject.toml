@@ -1,0 +1,108 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pycolour-extract"
+version = "2.0.0"
+description = "Advanced color extraction and analysis tool with machine learning capabilities"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "PyColour Extract Team"}
+]
+keywords = ["color", "image", "analysis", "palette", "extraction", "design"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+
+dependencies = [
+    "Pillow>=10.0.0",
+    "numpy>=1.21.0",
+    "scipy>=1.7.0",
+    "scikit-learn>=1.0.0",
+    "matplotlib>=3.5.0",
+    "seaborn>=0.11.0",
+    "click>=8.0.0",
+    "rich>=12.0.0",
+    "webcolors>=1.12.0",
+    "colormath>=3.0.0",
+    "opencv-python>=4.5.0",
+    "tqdm>=4.62.0",
+    "pydantic>=2.0.0",
+    "typer>=0.9.0",
+]
+
+[project.optional-dependencies]
+gui = [
+    "tkinter-modern>=1.0.0",
+    "customtkinter>=5.0.0",
+    "PyQt6>=6.4.0",
+]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "black>=22.0.0",
+    "isort>=5.10.0",
+    "flake8>=5.0.0",
+    "mypy>=1.0.0",
+    "pre-commit>=2.20.0",
+]
+export = [
+    "openpyxl>=3.0.0",
+    "pandas>=1.5.0",
+    "jinja2>=3.1.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/Kynlos/Python-Colour-Info-Extractor"
+Repository = "https://github.com/Kynlos/Python-Colour-Info-Extractor"
+Issues = "https://github.com/Kynlos/Python-Colour-Info-Extractor/issues"
+
+[project.scripts]
+pycolour-extract = "pycolour_extract.cli:main"
+pce = "pycolour_extract.cli:main"
+
+[project.gui-scripts]
+pycolour-extract-gui = "pycolour_extract.gui:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-v --cov=pycolour_extract --cov-report=term-missing"
